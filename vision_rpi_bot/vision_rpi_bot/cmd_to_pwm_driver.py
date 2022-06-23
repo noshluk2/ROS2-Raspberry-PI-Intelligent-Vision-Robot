@@ -41,7 +41,7 @@ class VelocitySubscriber(Node):
         right_wheel_vel = ( msg.linear.x  + msg.angular.z ) /2
         left_wheel_vel = (  msg.linear.x  - msg.angular.z ) /2
 
-        print(right_wheel_vel , " / " ,left_wheel_vel)
+        print(left_wheel_vel  , " / " ,right_wheel_vel)
 
         GPIO.output(self.mr_a, right_wheel_vel > 0)
         GPIO.output(self.mr_b, right_wheel_vel < 0 )

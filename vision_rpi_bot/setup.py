@@ -1,5 +1,6 @@
 from setuptools import setup
-
+import os
+from glob import glob
 package_name = 'vision_rpi_bot'
 
 setup(
@@ -10,6 +11,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share',package_name,'launch'),glob('launch/*')),
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -23,7 +26,7 @@ setup(
                 'publisher_rpi_node = vision_rpi_bot.publisher:main',
                 'subscriber_rpi_node = vision_rpi_bot.subscriber:main',
                 'cmdVel_to_pwm_node = vision_rpi_bot.cmd_to_pwm_driver:main',
-                'image_publisher_node = vision_rpi_bot.image_publisher:main',
+                'image_publisher = vision_rpi_bot.image_publisher:main',
                 'line_follow_drive_node = vision_rpi_bot.line_follow_drive:main',
 
                            ],
