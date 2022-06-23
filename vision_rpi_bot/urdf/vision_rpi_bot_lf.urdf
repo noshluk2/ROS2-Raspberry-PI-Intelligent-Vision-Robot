@@ -1,0 +1,280 @@
+<robot name="vision_rpi_bot">
+
+  <link name="base_footprint" />
+<!-- ////////////////////////////////////  BASE LINK //////////////////////////////////////////////// -->
+  <link name="base_link">
+    <inertial>
+      <mass value="4" />
+      <origin xyz="0 0 0.1" rpy="0 0 0" />
+      <inertia ixx="0.00355" iyy="0.01265" izz="0.013832" ixy="0.0" ixz="0.0" iyz="0.0" />
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/base.dae" />
+
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/base.dae" />
+      </geometry>
+    </collision>
+
+  </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.14" />
+  </joint>
+<!-- ////////////////////////////////////  COVER LINK //////////////////////////////////////////////// -->
+
+  <link name="cover_link">
+    <inertial>
+      <mass value="0.5" />
+      <origin xyz="0 0 0.1" rpy="0 0 0" />
+      <inertia ixx="0.00355" iyy="0.01265" izz="0.013832" ixy="0.0" ixz="0.0" iyz="0.0" />
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/cover.dae" />
+      </geometry>
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/cover.dae" />
+      </geometry>
+    </collision>
+
+
+  </link>
+
+  <joint name="cover_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="cover_link" />
+    <origin xyz="0.0015  0 0.08" rpy="0 0 0" />
+
+  </joint>
+
+<!-- ////////////////////////////////////  Right Wheel LINK //////////////////////////////////////////////// -->
+
+  <link name="wheel_right_link">
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.001444223" iyy="0.00280875" izz="0.001444223" ixy="0.0" ixz="0.0" iyz="0.0" />
+      <origin />
+    </inertial>
+
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.14"/>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/wheel.dae" />
+      </geometry>
+
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/wheel.dae" />
+      </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="wheel_right_joint" type="continuous">
+    <origin xyz="-0.232  0.14 -0.045  " rpy="0 0.0 -1.57" />
+    <parent link="base_link" />
+    <child link="wheel_right_link" />
+    <axis xyz="0 1 0" />
+  </joint>
+<!-- ////////////////////////////////////  Left Wheel LINK //////////////////////////////////////////////// -->
+
+  <link name="wheel_left_link">
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="0.001444223" iyy="0.00280875" izz="0.001444223" ixy="0.0" ixz="0.0" iyz="0.0" />
+      <origin />
+    </inertial>
+
+    <visual>
+
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/wheel.dae" />
+      </geometry>
+
+
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wheel_left_joint" type="continuous">
+    <origin xyz="0.233  0.14 -0.045  " rpy="0 0.0 -1.57" />
+    <parent link="base_link" />
+    <child link="wheel_left_link" />
+    <axis xyz="0.0 1 0" />
+
+  </joint>
+<!-- ////////////////////////////////////  Caster Holder LINK //////////////////////////////////////////////// -->
+
+<link name="caster_holder_link">
+
+  <inertial>
+    <mass value="0.1" />
+    <inertia ixx="0.0001295" iyy="0.0001295" izz="0.000199322" ixy="0.0" ixz="0.0" iyz="0.0" />
+    <origin />
+  </inertial>
+
+  <visual>
+    <geometry>
+      <mesh filename="package://vision_rpi_bot/meshes/caster_holder.dae" />
+    </geometry>
+  </visual>
+
+  <collision>
+    <geometry>
+      <mesh filename="package://vision_rpi_bot/meshes/caster_holder.dae" />
+    </geometry>
+  </collision>
+
+</link>
+
+<joint name="caster_holder_joint" type="continuous">
+  <origin xyz="0 -0.19 -0.015" rpy="0.0 0.0 0.0" />
+  <axis xyz="0 0 1" />
+  <parent link="base_link" />
+  <child link="caster_holder_link" />
+</joint>
+<!-- ////////////////////////////////////  Caster Wheel LINK //////////////////////////////////////////////// -->
+   <link name="caster_wheel_link">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="0.0001295" iyy="0.0001295" izz="0.000199322" ixy="0.0" ixz="0.0" iyz="0.0" />
+      <origin />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/caster_wheel.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/caster_wheel.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="caster_wheel_joint" type="continuous">
+    <origin xyz="0 -0.003  -0.086" rpy="0.0 0.0 0.0" />
+    <axis xyz="1 0 0" />
+    <parent link="caster_holder_link" />
+    <child link="caster_wheel_link" />
+  </joint>
+
+
+<!-- ////////////////////////////////////  Camera LINK //////////////////////////////////////////////// -->
+
+  <link name="camera_link">
+
+    <inertial>
+      <mass value="0.75" />
+      <inertia ixx="0.0001295" iyy="0.0001295" izz="0.000199322" ixy="0.0" ixz="0.0" iyz="0.0" />
+      <origin />
+    </inertial>
+
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.57"/>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/rpi_camera.dae" />
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://vision_rpi_bot/meshes/rpi_camera.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0 -0.24 0.2" rpy="0.0 0.65 -1.57" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+
+  </joint>
+
+<!-- //////////////////////////////////   Differential Drive Plugin  //////////////////////////////// -->
+<gazebo>
+      <plugin filename="libgazebo_ros_diff_drive.so" name="vision_rpi_bot_controller">
+        <odometry_frame>odom</odometry_frame>
+        <commandTopic>cmd_vel</commandTopic>
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <update_rate>15.0</update_rate>
+        <left_joint>wheel_left_joint</left_joint>
+        <right_joint>wheel_right_joint</right_joint>
+        <wheel_separation>0.47</wheel_separation>
+        <wheel_diameter>0.2</wheel_diameter>
+        <max_wheel_acceleration>2</max_wheel_acceleration>
+        <robotBaseFrame>base_link</robotBaseFrame>
+
+      </plugin>
+    </gazebo>
+
+
+<!-- ///////////////////////////////////////// Camera Plugin ////////////////////// -->
+
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="vision_rpi_bot_camera">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="rpi_bot_camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <visualize>true</visualize>
+        <updateRate>0.0</updateRate>
+        <cameraName>VRB/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+
+</robot>

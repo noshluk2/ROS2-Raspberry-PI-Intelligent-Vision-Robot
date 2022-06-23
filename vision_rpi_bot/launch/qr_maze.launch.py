@@ -27,7 +27,7 @@ def generate_launch_description():
                 package="gazebo_ros",
                 executable="spawn_entity.py",
                 arguments=["-topic","robot_description",
-                           "-entity","vision_bot"],#,"-Y","1.57"],
+                           "-entity","vision_bot"],
                 output= 'screen'
             ),
         ]
