@@ -65,7 +65,7 @@ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 * **Maze Solving through QR with Opencv**
   -  ![alt text](https://github.com/noshluk2/ROS2-Raspberry-PI-Intelligent-Vision-Robot/blob/main/images/qr_maze.gif)
 * **Line Following Robot using Computer Vision**
-  -  ![alt text](https://github.com/noshluk2/ROS2-Raspberry-PI-Intelligent-Vision-Robot/blob/main/images/line_following.gif.gif)
+  -  ![alt text](https://github.com/noshluk2/ROS2-Raspberry-PI-Intelligent-Vision-Robot/blob/main/images/line_following.gif)
 * **Surveillance based on AI robot**
   -  ![alt text](https://github.com/noshluk2/ROS2-Raspberry-PI-Intelligent-Vision-Robot/blob/main/images/ai_bot.gif)
 
