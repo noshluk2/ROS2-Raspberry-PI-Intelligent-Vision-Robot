@@ -1,6 +1,6 @@
 # ROS2 Based Intelligent Vision Robot
  ![alt text](https://github.com/noshluk2/ROS2-Raspberry-PI-Intelligent-Vision-Robot/blob/main/images/r2_rpi.png)
-- **[[Get course Here]](https://www.udemy.com/course/draft/2265374/?couponCode=ROS2LAUNCH)**
+- **[[Get course Here]](https://www.udemy.com/course/draft/2265374/?couponCode=MAY_LEARN)**
 ----
 
 <details open="open">
@@ -92,7 +92,7 @@ echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ## Link to the Course
 Below is a discounted coupon for people who want to take the course in which more explaination to this code has been added
 
-**[[Get course Here]](https://www.udemy.com/course/draft/2265374/?couponCode=ROS2LAUNCH)**
+**[[Get course Here]](https://www.udemy.com/course/draft/2265374/?couponCode=MAY_LEARN)**
 
 ----
 ## Commands
